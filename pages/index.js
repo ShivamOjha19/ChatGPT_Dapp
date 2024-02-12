@@ -1,8 +1,12 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 
+//Internal Import
+import { useStateContext } from '../Context/index'
 const index = () => {
+  //State Management Variable
+  const { DAPP_NAME } = useStateContext();
   return (
-    <div>index</div>
+    <div>{DAPP_NAME}</div>
   )
 }
 
