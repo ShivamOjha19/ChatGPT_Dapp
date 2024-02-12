@@ -74,3 +74,22 @@ function mint(uint256 _membershipId, address _user, string memory _expiredDate) 
 
   _safeMint(msg.sender, totalMemberships);
 }
+
+  function getMemberships(uint256 _membershipId) public view returns(Membership memory){
+   return memberships[_membershipId];
+  }
+
+  function getMembershipsTaken(uint256 _membershipId) public view returns(uint256[] memory){
+   return membershipsTaken[_membershipId];
+   }
+
+  function withdraw() public onlyOwner(){
+   (bool success,) = owner.call{value: address(this).balance}("");
+   require(success);
+  }
+
+  function getUsermembership(address _address) public view returns(UserMembership memory){
+   return userMemberships[_address];
+  }
+
+}
