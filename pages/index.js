@@ -6,7 +6,7 @@ const index = () => {
   //State Management Variable
   const { DAPP_NAME } = useStateContext();
   return (
-    <div>{DAPP_NAME}</div>
+    <div className="icon-custom">{DAPP_NAME}</div>
   )
 }
 
