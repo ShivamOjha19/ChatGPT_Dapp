@@ -2,7 +2,7 @@ import React, {useEffect, useState, createContext, useContext} from "react";
 import { ethers } from "ethers";
 
 //Internal Import
-import {} from '../Utils/apiFeature'
+import {CheckIfWalletConnected, connectWallet, connectingWithContract} from '../Utils/apiFeature'
 
 const StateContext = createContext();
 
