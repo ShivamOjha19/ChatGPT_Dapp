@@ -53,7 +53,7 @@ function list(string memory _name, uint256 _cost, string memory _date) public on
 }
 
 function mint(uint256 _membershipId, address _user, string memory _expiredDate) public payable {
-  require(_membershipId != 0, "Invalid membership ID"); // More informative message
+  require(_membershipId != 0, "Invalid membership ID");
   require(_membershipId <= membershipTypes, "Membership ID out of range");
 
   require(msg.value >= memberships[_membershipId].cost, "Insufficient Balance!");

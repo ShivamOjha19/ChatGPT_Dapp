@@ -28,12 +28,13 @@ const fetchData = async() => {
   const contract = await connectingWithContract();
   const connectAccount = await connectWallet();
   setAddress(connectAccount);
-
+/*
   //console.log(contract);
   const oneMonth = await contract.getMemberships(1);
   const sixMonth = await contract.getMemberships(2);
   const oneYear = await contract.getMemberships(3);
 
+  // Get Membership
   contractMembership = [
    {
     membership_name: oneMonth?.name,
@@ -65,14 +66,20 @@ const fetchData = async() => {
   ];
 
   console.log(contractMembership);
+  setContractMembership(contractMembership);
 
-  // Get Membership
+  // Get User Membership
+  const userMembership = await contract.getUsermembership(connectAccount);
 
-  //const oneMonth = await contract.getMemberships(1);
-  //const sixMonth = await contract.getMemberships(2);
-  //const oneYear = await contract.getMemberships(3);
+  userMembership = {
+   addressUser: userMembership.addressUser.toLowerCase(),
+   expiredate: userMembership.expiredate,
+   cost: ethers.utils.formatUnits(userMembership.cost.toString(), "ether"),
+   membershipId: userMembership.membershipId.toNumber(),
+   id: userMembership.id.toNumber(),
+  };
 
-
+  console.log(userMembership);*/
  } catch (error) {
   console.log(error);
  }
@@ -98,6 +105,24 @@ const listMembership = async () => {
  await list.wait();
  console.log(list);
 }
+
+// After calling list function to add membership
+// Define an async function to use await
+/*const fetchDataAndRetrieveMembership = async () => {
+  try {
+    await listMembership();
+    const contract = await connectingWithContract();
+    const membershipId = 1;
+    const membershipData = await contract.getMemberships(membershipId);
+    console.log(membershipData);
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+
+// Call the async function
+fetchDataAndRetrieveMembership();
+*/
 
 useEffect(() => {
  fetchData();
