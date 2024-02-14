@@ -4,9 +4,12 @@ import React, {useState, useEffect} from 'react'
 import { useStateContext } from '../Context/index'
 const index = () => {
   //State Management Variable
-  const { DAPP_NAME } = useStateContext();
+  const { DAPP_NAME, listMembership } = useStateContext();
   return (
-    <div className="icon-custom">{DAPP_NAME}</div>
+    <div className="icon-custom">
+      <p>{DAPP_NAME}</p>
+      <button onClick={() => listMembership()}>List Membership</button>
+      </div>
   )
 }
 

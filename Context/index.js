@@ -29,9 +29,14 @@ const fetchData = async() => {
   const connectAccount = await connectWallet();
   setAddress(connectAccount);
 
-  console.log(contract);
+  //console.log(contract);
 
   // Get Membership
+
+  const oneMonth = await contract.getMemberships(1);
+  const sixMonth = await contract.getMemberships(2);
+  const oneYear = await contract.getMemberships(3);
+
 
  } catch (error) {
   console.log(error);
@@ -42,9 +47,31 @@ useEffect(() => {
  fetchData();
 }, [])
 
+// Listing Memberships
+const listMembership = async () => {
+ const amount =1;
+ const MEMBERSHIP_NAME = "One Month";
+ const MEMBERSHIP_COST = ethers.utils.parseUnits(
+  amount.toString(),
+  "ether"
+ );
+ const MEMBERSHIP_DATE = "January 01 2024";
+
+ const contract = await connectingWithContract();
+ const list = await contract.list(
+  MEMBERSHIP_NAME,
+  MEMBERSHIP_COST,
+  MEMBERSHIP_DATE
+ );
+
+ await list.wait();
+ console.log(list);
+}
+
+
  return(
   
-  <StateContext.Provider value={{DAPP_NAME}}>
+  <StateContext.Provider value={{DAPP_NAME, listMembership}}>
    {children}
   </StateContext.Provider>
  
