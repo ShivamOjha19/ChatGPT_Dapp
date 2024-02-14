@@ -30,12 +30,17 @@ const fetchData = async() => {
   setAddress(connectAccount);
 
   //console.log(contract);
-
-  // Get Membership
-
   const oneMonth = await contract.getMemberships(1);
   const sixMonth = await contract.getMemberships(2);
   const oneYear = await contract.getMemberships(3);
+
+  console.log(oneMonth); 
+
+  // Get Membership
+
+  //const oneMonth = await contract.getMemberships(1);
+  //const sixMonth = await contract.getMemberships(2);
+  //const oneYear = await contract.getMemberships(3);
 
 
  } catch (error) {
@@ -43,14 +48,10 @@ const fetchData = async() => {
  }
 }
 
-useEffect(() => {
- fetchData();
-}, [])
-
 // Listing Memberships
 const listMembership = async () => {
- const amount =1;
- const MEMBERSHIP_NAME = "One Month";
+ const amount = 5;
+ const MEMBERSHIP_NAME = "One Year";
  const MEMBERSHIP_COST = ethers.utils.parseUnits(
   amount.toString(),
   "ether"
@@ -68,6 +69,9 @@ const listMembership = async () => {
  console.log(list);
 }
 
+useEffect(() => {
+ fetchData();
+}, [])
 
  return(
   
