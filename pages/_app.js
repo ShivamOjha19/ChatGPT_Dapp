@@ -20,7 +20,7 @@ export default function App({ Component, pageProps }) {
     <script src="assets/js/swiper-bundle.min.js"></script>
     <script src="assets/js/aos.js"></script>
     <script src="assets/js/custom-aos.js"></script>
-    <script src="assets/js/home-animation.js"></script>
+    {/* <script src="assets/js/home-animation.js"></script> */}
     <script src="assets/js/header_sticky.js"></script>
     <script src="assets/js/script.js"></script>
     </>

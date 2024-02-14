@@ -3,6 +3,7 @@ import { ethers } from "ethers";
 
 //Internal Import
 import {CheckIfWalletConnected, connectWallet, connectingWithContract} from '../Utils/apiFeature'
+import { Divider } from "@material-ui/core";
 
 const StateContext = createContext();
 
@@ -38,9 +39,12 @@ const fetchData = async() => {
 }
 
  return(
+  
   <StateContext.Provider value={{DAPP_NAME}}>
    {children}
   </StateContext.Provider>
+ 
+ 
  );
 };
 
