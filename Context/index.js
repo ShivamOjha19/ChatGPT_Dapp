@@ -34,7 +34,37 @@ const fetchData = async() => {
   const sixMonth = await contract.getMemberships(2);
   const oneYear = await contract.getMemberships(3);
 
-  console.log(oneMonth); 
+  contractMembership = [
+   {
+    membership_name: oneMonth?.name,
+    membership_date: oneMonth?.date,
+    membership_id: oneMonth?.id.toNumber(),
+    membership_cost: ethers.utils.formatUnits(
+     oneMonth?.cost.toString(),
+     "ether"
+    )
+   },
+   {
+    membership_name: sixMonth?.name,
+    membership_date: sixMonth?.date,
+    membership_id: sixMonth?.id.toNumber(),
+    membership_cost: ethers.utils.formatUnits(
+     sixMonth?.cost.toString(),
+     "ether"
+    )
+   },
+   {
+    membership_name: oneYear?.name,
+    membership_date: oneYear?.date,
+    membership_id: oneYear?.id.toNumber(),
+    membership_cost: ethers.utils.formatUnits(
+     oneYear?.cost.toString(),
+     "ether"
+    )
+   }
+  ];
+
+  console.log(contractMembership);
 
   // Get Membership
 
@@ -50,8 +80,8 @@ const fetchData = async() => {
 
 // Listing Memberships
 const listMembership = async () => {
- const amount = 5;
- const MEMBERSHIP_NAME = "One Year";
+ const amount = 1;
+ const MEMBERSHIP_NAME = "One Month";
  const MEMBERSHIP_COST = ethers.utils.parseUnits(
   amount.toString(),
   "ether"
