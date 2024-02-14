@@ -17,7 +17,6 @@ export const CheckIfWalletConnected = async() =>{
 
   const firstaccount = accounts[0];
   //console.log(firstaccount);
-  if (!firstaccount) return console.log('No connected account');
 
   return firstaccount;
 
@@ -37,8 +36,7 @@ export const connectWallet = async() =>{
 
   const firstaccount = accounts[0];
   //console.log(firstaccount);
-  if (!firstaccount) return console.log('No connected account');
-
+  
   return firstaccount;
 
  } catch (error) {

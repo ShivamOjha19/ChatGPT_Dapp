@@ -38,6 +38,10 @@ const fetchData = async() => {
  }
 }
 
+useEffect(() => {
+ fetchData();
+}, [])
+
  return(
   
   <StateContext.Provider value={{DAPP_NAME}}>
