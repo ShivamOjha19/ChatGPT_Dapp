@@ -49,7 +49,7 @@ window.addEventListener('load', () => {
 ==========================*/
 const tapTopBtn = document.querySelector(".tap-to-top-button")
 const tapTopTopBox = document.querySelector(".tap-to-top-box")
-tapTopBtn ? .addEventListener("click", function() {
+tapTopBtn?.addEventListener("click", function() {
     window.scroll({
         top: 0,
         behavior: 'smooth'
