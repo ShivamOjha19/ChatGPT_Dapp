@@ -35,11 +35,11 @@ export const StateContextProvider = ({ children }) => {
       //console.log(contract);
       // console.log(contract);
 
-      /*const oneMonth = await contract.getMemberships(1);
-
-      const sixMonth = await contract.getMemberships(2);
+      const oneMonth = await contract.getMemberships(1);
+      console.log(oneMonth);
+      /* const sixMonth = await contract.getMemberships(2);
       const oneYear = await contract.getMemberships(3);
-      console.log(oneYear);
+      
       /*
   // Get Membership
   contractMembership = [
@@ -149,7 +149,7 @@ fetchDataAndRetrieveMembership();
 
  */
   useEffect(() => {
-    fetchData();
+    //fetchData();
   }, []);
 
   return (
