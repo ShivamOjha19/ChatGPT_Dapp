@@ -81,7 +81,7 @@ function mint(uint256 _membershipId, address _user, string memory _expiredDate) 
 
   function getMembershipsTaken(uint256 _membershipId) public view returns(uint256[] memory){
    return membershipsTaken[_membershipId];
-   }
+  }
 
   function withdraw() public onlyOwner(){
    (bool success,) = owner.call{value: address(this).balance}("");
