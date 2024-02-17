@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 contract GPTMembership is ERC721{
  address public owner;
- uint256 public membershipTypes;
+ uint256 public membershipTypes = 0;
  uint256 public totalMemberships;
 
  string public MY_CONTRACT = "Shivam Ojha";
